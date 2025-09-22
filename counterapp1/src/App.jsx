@@ -3,20 +3,20 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [limit, setLimit] = useState(10); // default limit
+  const [limit, setLimit] = useState(10); 
 
-  // Fetch API for initial data (dummy Contact API)
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users/1")
       .then((res) => res.json())
       .then((data) => {
-        setCount(data.id); // starting point from API
-        setLimit(5);       // you can change as per API
+        setCount(data.id); 
+        setLimit(5);       
       })
       .catch((err) => console.error(err));
   }, []);
 
-  // Increment with reset
+
   const handleIncrement = () => {
     if (count < limit) {
       setCount(count + 1);
@@ -25,7 +25,7 @@ function App() {
     }
   };
 
-  // Decrement with reset
+
   const handleDecrement = () => {
     if (count > 0) {
       setCount(count - 1);
